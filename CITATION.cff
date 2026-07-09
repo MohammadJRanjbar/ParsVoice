@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this pipeline or the ParsVoice corpus, please cite the paper below."
+title: "ParsVoice: A Large-Scale Multi-Speaker Persian Speech Corpus for Text-to-Speech Synthesis"
+authors:
+  - name: "Anonymous"
+date-released: 2026-07-09
+license: MIT
+keywords:
+  - text-to-speech
+  - speech-corpus
+  - persian-nlp
+  - low-resource-languages
+  - speaker-identification
+preferred-citation:
+  type: conference-paper
+  title: "ParsVoice: A Large-Scale Multi-Speaker Persian Speech Corpus for Text-to-Speech Synthesis"
+  authors:
+    - name: "Anonymous"
+  year: 2026
+  notes: "Author list redacted for double-blind review."

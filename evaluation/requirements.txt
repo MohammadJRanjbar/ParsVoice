@@ -1,0 +1,16 @@
+# Dependencies for the evaluation tools in this directory.
+
+# goyar_mos_bot.py -- Telegram subjective (MOS/SMOS/intelligibility) evaluation
+pandas>=2.0
+pyTelegramBotAPI>=4.14
+
+# calculate_wer_cer.py -- objective intelligibility evaluation (WER/CER)
+jiwer>=3.0
+SpeechRecognition>=3.10   # --engine google
+torch>=2.1                # --engine hf
+transformers>=4.38        # --engine hf
+librosa>=0.10              # --engine hf
+
+# calculate_speaker_similarity.py -- objective ECAPA-TDNN speaker similarity
+torchaudio>=2.1
+speechbrain>=1.0

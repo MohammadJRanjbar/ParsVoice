@@ -1,0 +1,26 @@
+# Core pipeline dependencies (stages 1-7).
+# Tested with Python 3.10/3.11. ffmpeg must be installed and on PATH (used by pydub).
+# For the Telegram MOS evaluation bot, see evaluation/requirements.txt instead.
+
+# Stages 1-2, 7 - ASR, segmentation, boundary optimization, punctuation restoration
+pandas>=2.0
+numpy>=1.24
+librosa>=0.10
+webrtcvad>=2.0.10
+SpeechRecognition>=3.10
+pydub>=0.25
+filelock>=3.13
+tqdm>=4.66
+torch>=2.1
+transformers>=4.38
+
+# Stage 3 - audio quality (background-music detection)
+inaSpeechSegmenter>=0.7.6
+
+# Stage 5 - speaker embeddings
+torchaudio>=2.1
+speechbrain>=1.0
+
+# Stage 6 - speaker identification
+scikit-learn>=1.3
+scipy>=1.11

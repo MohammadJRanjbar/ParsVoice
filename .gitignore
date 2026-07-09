@@ -1,0 +1,30 @@
+# Data & pipeline outputs
+data/
+*.wav
+*.mp3
+*.flac
+*.npy
+
+# Checkpoints and caches
+**/checkpoint*.json
+**/*_checkpoint.json
+.checkpoints/
+*.tmp
+
+# Credentials -- never commit these
+credentials.json
+token.pickle
+*.env
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
