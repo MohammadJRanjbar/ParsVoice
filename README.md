@@ -239,15 +239,9 @@ We fine-tuned XTTSv2's GPT component on ParsVoice (frozen DVAE, 2,500 added Pers
 
 ## Notes on this release
 
-Every stage was checked directly against the lab's original scripts and notebooks (not just the paper text) before being ported here. A few places where the runnable code and the paper's prose diverge, or where this port had to make an explicit call, are called out below rather than silently "corrected" one way or the other:
-
-- **XTTS training/evaluation is intentionally out of scope.** This repository is the corpus-construction pipeline and evaluation tooling only; ParsVoice is model-agnostic and works with any TTS architecture that consumes (audio, text, speaker-id) triples.
-- **This pipeline takes a local CSV of audiobooks as input** rather than scraping a specific source site — the original lab pipeline sourced audiobooks from IranSeda with a bespoke scraper and mirrored downloads to Google Drive; that source-specific scraping/backup code is deliberately not part of this repository.
-- **Stage 1's VAD aggressiveness is 1**, matching the working script, even though Appendix A's comparison table names level 0 as the selected setting. Change `VAD_AGGRESSIVENESS` in `01_segment_and_transcribe.py` if you want to match the appendix text exactly.
-- **Stage 3's composite audio-quality formula** matches the original `calculate_quality_score_fast` (30/15/20/15/10/10-point weights, including a sample-rate term). The paper's Appendix E table lists different point values with no sample-rate term — see the comment on `composite_score()` if you need the table's numbers instead.
-- **Stage 4's default weights** are the ones used when scoring the released corpus; they group text-quality dimensions slightly differently than the six-way split shown for illustration in the paper's appendix. The weighting is a plain `dict` argument (`DEFAULT_WEIGHTS`) — override it if you need to reproduce a specific ablation exactly.
-- **Stage 5 (`05_extract_speaker_embeddings.py`) is ported from the lab's `SpeakerEmbeddingExtractor` notebook** (explicitly marked as the "correct final version" among several drafts): batch GPU extraction via SpeechBrain's ECAPA-TDNN, with per-(audiobook, file-index) checkpointing. It additionally carries `final_transcript`, `completion_status`, and the post-trim duration through to its output manifest, which the original script didn't -- without them, Stage 7 has no way to recover the transcript text or apply Section 3.6's completeness filter downstream.
-- **Stage 6's local clustering** includes the co-occurrence ensemble-combination step from the original `_ensemble_clustering` method (falls back to it only when it beats the single best method's silhouette score) -- this is present in the code but not spelled out in the paper's one-line summary of the clustering ensemble.
+- XTTS training/evaluation is out of scope — this repo is the corpus-construction pipeline and evaluation tooling only, and works with any TTS architecture.
+- The pipeline takes a local CSV of audiobooks as input rather than any specific scraper or cloud-storage integration.
+- Every filtering/scoring threshold (VAD sensitivity, audio and text quality cutoffs, speaker-similarity thresholds, trim/extension step sizes, etc.) is a plain, named constant at the top of its stage script — tune them directly for your own data.
 
 ## Citation
 
