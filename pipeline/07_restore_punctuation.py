@@ -12,8 +12,8 @@ punctuation materially affects prosody modelling in TTS. This final stage:
        background music, low-confidence speaker clusters, or an
        "Incomplete" sentence-completion flag.
     3. Restores punctuation on every surviving transcript with the
-       ParsBERT-based token-classification model from PersianPunc (citation
-       omitted for anonymous review), predicting one of {none, '.', '،',
+       ParsBERT-based token-classification model from PersianPunc
+       (https://aclanthology.org/2026.silkroadnlp-1.11/), predicting one of {none, '.', '،',
        '؟', ':'} per word.
     4. Writes the release-ready manifest (audio path, punctuated transcript,
        speaker IDs, audio/text quality scores).

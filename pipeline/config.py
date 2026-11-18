@@ -46,7 +46,8 @@ AUDIOBOOKS_CSV = _path("PARSVOICE_AUDIOBOOKS_CSV", DATA_ROOT / "audiobooks.csv")
 SEGMENTS_DIR = _path("PARSVOICE_SEGMENTS_DIR", DATA_ROOT / "01_segments")
 # Fine-tuned ParsBERT sentence-completion checkpoint (Appendix C). This is a
 # pretrained artifact, not produced by this repository -- point it at your
-# local copy or a Hugging Face Hub model id (link omitted for anonymous review).
+# local copy or a Hugging Face Hub model id, e.g. the released checkpoint
+# MohammadJRanjbar/persian-sentence-completion (trained on PersianPunc data).
 SENTENCE_COMPLETION_MODEL_PATH = os.environ.get(
     "PARSVOICE_COMPLETION_MODEL_PATH", "<path-to-sentence-completion-model>"
 )
@@ -72,9 +73,10 @@ GLOBAL_SPEAKER_ID_DIR = _path(
 
 # --- Stage 7: Punctuation restoration + final release -----------------------
 RELEASE_DIR = _path("PARSVOICE_RELEASE_DIR", DATA_ROOT / "07_release")
-# ParsBERT-based Persian punctuation restoration model (PersianPunc; citation
-# omitted for anonymous review). Also a pretrained artifact, not trained by
-# this repo.
+# ParsBERT-based Persian punctuation restoration model from PersianPunc
+# (https://aclanthology.org/2026.silkroadnlp-1.11/), released as
+# MohammadJRanjbar/parsbert-persian-punctuation. Also a pretrained artifact,
+# not trained by this repo.
 PUNCTUATION_MODEL_PATH = os.environ.get(
     "PARSVOICE_PUNCTUATION_MODEL_PATH", "<path-to-punctuation-restoration-model>"
 )

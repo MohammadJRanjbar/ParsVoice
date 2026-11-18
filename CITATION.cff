@@ -1,10 +1,17 @@
 cff-version: 1.2.0
-message: "If you use this pipeline or the ParsVoice corpus, please cite the paper below."
+message: "If you use ParsVoice or this pipeline, please cite the ParsVoice paper below. The pipeline also uses PersianPunc (listed under references); please cite it as well."
 title: "ParsVoice: A Large-Scale Multi-Speaker Persian Speech Corpus for Text-to-Speech Synthesis"
 authors:
-  - name: "Anonymous"
+  - family-names: "Ranjbar Kalahroodi"
+    given-names: "Mohammad Javad"
+  - family-names: "Shakery"
+    given-names: "Azadeh"
+  - family-names: "Faili"
+    given-names: "Heshaam"
 date-released: 2026-07-09
 license: MIT
+repository-code: "https://github.com/MohammadJRanjbar/ParsVoice"
+url: "https://huggingface.co/datasets/MohammadJRanjbar/ParsVoice"
 keywords:
   - text-to-speech
   - speech-corpus
@@ -15,6 +22,45 @@ preferred-citation:
   type: conference-paper
   title: "ParsVoice: A Large-Scale Multi-Speaker Persian Speech Corpus for Text-to-Speech Synthesis"
   authors:
-    - name: "Anonymous"
+    - family-names: "Ranjbar Kalahroodi"
+      given-names: "Mohammad Javad"
+    - family-names: "Shakery"
+      given-names: "Azadeh"
+    - family-names: "Faili"
+      given-names: "Heshaam"
+  collection-title: "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing"
+  publisher:
+    name: "Association for Computational Linguistics"
+  conference:
+    name: "EMNLP 2026"
+    city: "Budapest"
+    country: "HU"
   year: 2026
-  notes: "Author list redacted for double-blind review."
+  month: 10
+  start: 55804
+  end: 55819
+  doi: "10.18653/2026.emnlp-main.2458"
+  url: "https://aclanthology.org/2026.emnlp-main.2458/"
+references:
+  - type: conference-paper
+    title: "PersianPunc: A Large-Scale Dataset and BERT-Based Approach for Persian Punctuation Restoration"
+    authors:
+      - family-names: "Ranjbar Kalahroodi"
+        given-names: "Mohammad Javad"
+      - family-names: "Faili"
+        given-names: "Heshaam"
+      - family-names: "Shakery"
+        given-names: "Azadeh"
+    collection-title: "The Proceedings of the First Workshop on NLP and LLMs for the Iranian Language Family"
+    publisher:
+      name: "Association for Computational Linguistics"
+    conference:
+      name: "SilkRoadNLP 2026"
+      city: "Rabat"
+      country: "MA"
+    year: 2026
+    month: 3
+    start: 105
+    end: 113
+    doi: "10.18653/v1/2026.silkroadnlp-1.11"
+    url: "https://aclanthology.org/2026.silkroadnlp-1.11/"

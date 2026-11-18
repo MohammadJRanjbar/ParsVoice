@@ -6,7 +6,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](requirements.txt)
-[![Paper](https://img.shields.io/badge/paper-ACL-b31b1b.svg)](#citation)
+[![Paper](https://img.shields.io/badge/paper-EMNLP%202026-b31b1b.svg)](https://aclanthology.org/2026.emnlp-main.2458/)
+[![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20dataset-ParsVoice-yellow.svg)](https://huggingface.co/datasets/MohammadJRanjbar/ParsVoice)
 
 **2,200 hours** &nbsp;·&nbsp; **1.36M segments** &nbsp;·&nbsp; **1,815 speakers** &nbsp;·&nbsp; 25x larger than the previous largest open Persian TTS corpus
 
@@ -110,7 +111,7 @@ ParsVoice/
 ## Installation
 
 ```bash
-git clone <this-repository-url>
+git clone https://github.com/MohammadJRanjbar/ParsVoice.git
 cd ParsVoice
 
 python3 -m venv .venv && source .venv/bin/activate
@@ -232,8 +233,8 @@ We fine-tuned XTTSv2's GPT component on ParsVoice (frozen DVAE, 2,500 added Pers
 
 | Model | Used in | Source |
 |---|---|---|
-| Sentence-completion classifier (ParsBERT) | Stage 1 | Fine-tuned from [ParsBERT](https://github.com/hooshvare/parsbert) on PersianPunc truncation-augmented data (Appendix C); citation omitted for anonymous review |
-| Punctuation restoration (ParsBERT) | Stage 7 | PersianPunc; citation omitted for anonymous review |
+| Sentence-completion classifier (ParsBERT) | Stage 1 | Fine-tuned from [ParsBERT](https://github.com/hooshvare/parsbert) on [PersianPunc](https://aclanthology.org/2026.silkroadnlp-1.11/) truncation-augmented data (Appendix C): [`MohammadJRanjbar/persian-sentence-completion`](https://huggingface.co/MohammadJRanjbar/persian-sentence-completion) |
+| Punctuation restoration (ParsBERT) | Stage 7 | From [PersianPunc](https://aclanthology.org/2026.silkroadnlp-1.11/): [`MohammadJRanjbar/parsbert-persian-punctuation`](https://huggingface.co/MohammadJRanjbar/parsbert-persian-punctuation) |
 | Speaker embeddings (ECAPA-TDNN) | Stage 5 | [`speechbrain/spkrec-ecapa-voxceleb`](https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb) |
 | ASR (transcription) | Stages 1–2 | Google Web Speech API via [`SpeechRecognition`](https://github.com/Uberi/speech_recognition) (swappable — see §3.2 of the paper) |
 
@@ -245,18 +246,55 @@ We fine-tuned XTTSv2's GPT component on ParsVoice (frozen DVAE, 2,500 added Pers
 
 ## Citation
 
-If you use ParsVoice or this pipeline, please cite:
+If you use the ParsVoice corpus, this pipeline or the evaluation tools, please cite the
+[ParsVoice paper](https://aclanthology.org/2026.emnlp-main.2458/) (EMNLP 2026):
 
 ```bibtex
-@inproceedings{anonymous2026parsvoice,
-  title     = {ParsVoice: A Large-Scale Multi-Speaker Persian Speech Corpus for Text-to-Speech Synthesis},
-  author    = {Anonymous},
-  year      = {2026},
-  note      = {Under double-blind review}
+@inproceedings{ranjbar-kalahroodi-etal-2026-parsvoice,
+    title = "{P}ars{V}oice: A Large-Scale Multi-Speaker {P}ersian Speech Corpus for Text-to-Speech Synthesis",
+    author = "Ranjbar Kalahroodi, Mohammad Javad  and
+      Shakery, Azadeh  and
+      Faili, Heshaam",
+    editor = "Lee, Hung-Yi  and
+      Dev, Sunipa  and
+      Li, Junyi Jessy  and
+      Elliott, Desmond",
+    booktitle = "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    month = oct,
+    year = "2026",
+    address = "Budapest, Hungary",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.emnlp-main.2458/",
+    doi = "10.18653/2026.emnlp-main.2458",
+    pages = "55804--55819",
+    ISBN = "979-8-89176-459-0"
 }
 ```
 
-*(Author list redacted for double-blind review; full citation will be provided upon acceptance.)*
+The pipeline is built on PersianPunc: stage 7 restores punctuation with the PersianPunc model, and the
+stage 1 sentence-completion classifier is trained on PersianPunc data. If you use the pipeline, please
+also cite the [PersianPunc paper](https://aclanthology.org/2026.silkroadnlp-1.11/):
+
+```bibtex
+@inproceedings{ranjbar-kalahroodi-etal-2026-persianpunc,
+    title = "{P}ersian{P}unc: A Large-Scale Dataset and {BERT}-Based Approach for {P}ersian Punctuation Restoration",
+    author = "Ranjbar Kalahroodi, Mohammad Javad  and
+      Faili, Heshaam  and
+      Shakery, Azadeh",
+    editor = "Merchant, Rayyan  and
+      Megerdoomian, Karine  and
+      Asgari, Ehsaneddin",
+    booktitle = "The Proceedings of the First Workshop on {NLP} and {LLM}s for the {I}ranian Language Family",
+    month = mar,
+    year = "2026",
+    address = "Rabat, Morocco",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.silkroadnlp-1.11/",
+    doi = "10.18653/v1/2026.silkroadnlp-1.11",
+    pages = "105--113",
+    ISBN = "979-8-89176-371-5"
+}
+```
 
 ## License
 
