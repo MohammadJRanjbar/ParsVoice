@@ -253,8 +253,8 @@ If you use the ParsVoice corpus, this pipeline or the evaluation tools, please c
 @inproceedings{ranjbar-kalahroodi-etal-2026-parsvoice,
     title = "{P}ars{V}oice: A Large-Scale Multi-Speaker {P}ersian Speech Corpus for Text-to-Speech Synthesis",
     author = "Ranjbar Kalahroodi, Mohammad Javad  and
-      Shakery, Azadeh  and
-      Faili, Heshaam",
+      Faili, Heshaam  and
+      Shakery, Azadeh",
     editor = "Lee, Hung-Yi  and
       Dev, Sunipa  and
       Li, Junyi Jessy  and

@@ -4,10 +4,10 @@ title: "ParsVoice: A Large-Scale Multi-Speaker Persian Speech Corpus for Text-to
 authors:
   - family-names: "Ranjbar Kalahroodi"
     given-names: "Mohammad Javad"
-  - family-names: "Shakery"
-    given-names: "Azadeh"
   - family-names: "Faili"
     given-names: "Heshaam"
+  - family-names: "Shakery"
+    given-names: "Azadeh"
 date-released: 2026-07-09
 license: MIT
 repository-code: "https://github.com/MohammadJRanjbar/ParsVoice"
@@ -24,10 +24,10 @@ preferred-citation:
   authors:
     - family-names: "Ranjbar Kalahroodi"
       given-names: "Mohammad Javad"
-    - family-names: "Shakery"
-      given-names: "Azadeh"
     - family-names: "Faili"
       given-names: "Heshaam"
+    - family-names: "Shakery"
+      given-names: "Azadeh"
   collection-title: "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing"
   publisher:
     name: "Association for Computational Linguistics"
